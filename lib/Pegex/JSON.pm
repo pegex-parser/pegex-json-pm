@@ -6,8 +6,8 @@
 # copyright: 2011
 
 use 5.010;
-use Pegex 0.16;
-use Mo 0.15;
+use Pegex 0.16 ();
+use Mo 0.22 ();
 
 package Pegex::JSON;
 use Mo;
@@ -15,7 +15,7 @@ extends 'Pegex::Module';
 
 our $VERSION = '0.10';
 
-has receiver => default => sub { 'Pegex::JSON::Data' };
+use constant receiver => 'Pegex::JSON::Data';
 
 1;
 
