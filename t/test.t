@@ -17,6 +17,8 @@ sub yaml {
 __DATA__
 %TestML 1.0
 
+Plan = 9;
+
 *json.parse.yaml == *yaml;
 
 === Simple Mapping
@@ -79,3 +81,15 @@ xyz:
   - 1
   - 2
   - 3
+
+=== Leading and Trailing Whitespace
+--- json
+       [
+{  "xyz"  : [  1  ,  2  ,  3  ]  }  
+]      
+--- yaml
+- xyz:
+  - 1
+  - 2
+  - 3
+
