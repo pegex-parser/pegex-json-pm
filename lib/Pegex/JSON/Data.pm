@@ -9,8 +9,6 @@ package Pegex::JSON::Data;
 use Pegex::Mo;
 extends 'Pegex::Receiver';
 
-use constant wrap => 0;
-
 use boolean;
 
 sub got_map { +{map @$_, map @$_, @{(pop)}} }
