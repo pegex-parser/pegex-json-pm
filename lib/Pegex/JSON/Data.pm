@@ -9,39 +9,21 @@ package Pegex::JSON::Data;
 use Pegex::Mo;
 extends 'Pegex::Receiver';
 
+use constant wrap => 0;
+
 use boolean;
 
-sub got_map {
-    my ($self, $pairs) = @_;
-    return {map @$_, map @$_, @$pairs};
-}
-
-sub got_seq {
-    my ($self, $list) = @_;
-    return [map @$_, map @$_, $list];
-}
+sub got_map { +{map @$_, map @$_, @{(pop)}} }
+sub got_seq { [map @$_, @{(pop)}] }
 
 sub got_string {
-    my ($self, $string) = @_;
-    $string = $string->{1};
-    $string =~ s/\\n/\n/g; # XXX need to do other escapes
+    my $string = pop;
+    # XXX need to decode other string escapes here
+    $string =~ s/\\n/\n/g;
     return $string;
 }
 
-sub got_number {
-    return $_[1]->{1} + 0;
-}
-
-sub got_true {
-    return &boolean::true;
-}
-
-sub got_false {
-    return &boolean::false;
-}
-
-sub got_null {
-    return undef;
-}
-
-1;
+sub got_number { $_[1] + 0 }
+sub got_true { &boolean::true }
+sub got_false { &boolean::false }
+sub got_null { undef }

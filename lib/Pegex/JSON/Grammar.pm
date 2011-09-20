@@ -13,19 +13,7 @@ use constant text => '../pegex-json-pgx/json.pgx';
 
 sub tree {
   {
-    '+top' => 'TOP',
-    'TOP' => {
-      '.any' => [
-        {
-          '-pass' => 1,
-          '.ref' => 'map'
-        },
-        {
-          '-pass' => 1,
-          '.ref' => 'seq'
-        }
-      ]
-    },
+    '+top' => 'json',
     'boolean' => {
       '.any' => [
         {
@@ -39,6 +27,16 @@ sub tree {
     'false' => {
       '.rgx' => qr/(?-xism:\G(f)alse)/
     },
+    'json' => {
+      '.any' => [
+        {
+          '.ref' => 'map'
+        },
+        {
+          '.ref' => 'seq'
+        }
+      ]
+    },
     'map' => {
       '.all' => [
         {
@@ -46,7 +44,6 @@ sub tree {
         },
         {
           '+qty' => '?',
-          '-pass' => 1,
           '.ref' => 'pair',
           '.sep' => {
             '.rgx' => qr/(?-xism:\G\s*,\s*)/
@@ -60,15 +57,12 @@ sub tree {
     'node' => {
       '.any' => [
         {
-          '-pass' => 1,
           '.ref' => 'map'
         },
         {
-          '-pass' => 1,
           '.ref' => 'seq'
         },
         {
-          '-pass' => 1,
           '.ref' => 'scalar'
         }
       ]
@@ -88,7 +82,6 @@ sub tree {
           '.rgx' => qr/(?-xism:\G\s*:\s*)/
         },
         {
-          '-pass' => 1,
           '.ref' => 'node'
         }
       ]
@@ -102,7 +95,6 @@ sub tree {
           '.ref' => 'number'
         },
         {
-          '-pass' => 1,
           '.ref' => 'boolean'
         },
         {
@@ -117,7 +109,6 @@ sub tree {
         },
         {
           '+qty' => '?',
-          '-pass' => 1,
           '.ref' => 'node',
           '.sep' => {
             '.rgx' => qr/(?-xism:\G\s*,\s*)/

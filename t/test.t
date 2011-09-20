@@ -3,7 +3,7 @@ use TestML -run,
 
 use Pegex::JSON;
 
-#     $Pegex::Parser::Debug = 1;
+# $Pegex::Parser::Debug = 1;
 sub parse {
     return Pegex::JSON->new->parse((shift)->value);
 }
