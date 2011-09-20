@@ -3,8 +3,8 @@ use TestML -run,
 
 use Pegex::JSON;
 
-sub parse {
 #     $Pegex::Parser::Debug = 1;
+sub parse {
     return Pegex::JSON->new->parse((shift)->value);
 }
 
@@ -17,13 +17,12 @@ sub yaml {
 __DATA__
 %TestML 1.0
 
-Plan = 9;
+Plan = 10;
 
 *json.parse.yaml == *yaml;
 
 === Simple Mapping
---- json
-{ "a": 1, "b": 2 }
+--- json: {"a":1,"b":2}
 --- yaml
 a: 1
 b: 2
@@ -93,3 +92,11 @@ xyz:
   - 2
   - 3
 
+=== False Values
+--- json
+[0, "", false, null]
+--- yaml
+- 0
+- ''
+- 0
+- ~

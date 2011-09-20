@@ -29,11 +29,9 @@ sub tree {
     'boolean' => {
       '.any' => [
         {
-          '-pass' => 1,
           '.ref' => 'true'
         },
         {
-          '-pass' => 1,
           '.ref' => 'false'
         }
       ]
@@ -104,6 +102,7 @@ sub tree {
           '.ref' => 'number'
         },
         {
+          '-pass' => 1,
           '.ref' => 'boolean'
         },
         {

@@ -9,14 +9,16 @@ package Pegex::JSON::Data;
 use Pegex::Mo;
 extends 'Pegex::Receiver';
 
+use boolean;
+
 sub got_map {
     my ($self, $pairs) = @_;
     return {map @$_, map @$_, @$pairs};
 }
 
 sub got_seq {
-    my ($self, $nodes) = @_;
-    return [map @$_, map @$_, $nodes];
+    my ($self, $list) = @_;
+    return [map @$_, map @$_, $list];
 }
 
 sub got_string {
@@ -27,16 +29,19 @@ sub got_string {
 }
 
 sub got_number {
-    my ($self, $number) = @_;
-    return $number->{1} + 0;
+    return $_[1]->{1} + 0;
 }
 
-sub got_boolean {
-    require boolean;
-    my ($self, $boolean) = @_;
-    return
-        $boolean->{1} eq 't' ? &boolean::true :
-        $boolean->{1} eq 'f' ? &boolean::false : undef;
+sub got_true {
+    return &boolean::true;
+}
+
+sub got_false {
+    return &boolean::false;
+}
+
+sub got_null {
+    return undef;
 }
 
 1;

@@ -8,6 +8,7 @@
 use 5.010;
 use Pegex 0.16 ();
 use Mo 0.22 ();
+use boolean 0.28 ();
 
 package Pegex::JSON;
 use Mo;
