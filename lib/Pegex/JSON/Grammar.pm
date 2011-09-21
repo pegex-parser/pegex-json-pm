@@ -9,7 +9,7 @@ package Pegex::JSON::Grammar;
 use Mo;
 extends 'Pegex::Grammar';
 
-use constant text => '../pegex-json-pgx/json.pgx';
+use constant text => '../json-pgx/json.pgx';
 
 sub tree {
   {
@@ -25,7 +25,7 @@ sub tree {
       ]
     },
     'false' => {
-      '.rgx' => qr/(?-xism:\G(f)alse)/
+      '.rgx' => qr/(?-xism:\Gfalse)/
     },
     'json' => {
       '.any' => [
@@ -123,7 +123,7 @@ sub tree {
       '.rgx' => qr/(?-xism:\G"((?:\\\\|\\"|[^"\n])*)")/
     },
     'true' => {
-      '.rgx' => qr/(?-xism:\G(t)rue)/
+      '.rgx' => qr/(?-xism:\Gtrue)/
     }
   }
 }

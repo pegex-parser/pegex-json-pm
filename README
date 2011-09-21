@@ -7,6 +7,11 @@ SYNOPSIS
 DESCRIPTION
     Pegex::JSON is a JSON parser written in Pegex.
 
+SEE ALSO
+    *   Pegex
+
+    *   JSON
+
 AUTHOR
     Ingy döt Net <ingy@cpan.org>
 

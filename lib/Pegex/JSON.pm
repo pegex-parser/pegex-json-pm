@@ -4,14 +4,17 @@
 # author:    Ingy döt Net <ingy@cpan.org>
 # license:   perl
 # copyright: 2011
+# see:
+# - Pegex
+# - JSON
 
 use 5.010;
+
 use Pegex 0.16 ();
-use Mo 0.22 ();
 use boolean 0.28 ();
 
 package Pegex::JSON;
-use Mo;
+use Pegex::Mo;
 extends 'Pegex::Module';
 
 our $VERSION = '0.10';
