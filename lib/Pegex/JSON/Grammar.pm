@@ -43,7 +43,7 @@ sub tree {
           '.rgx' => qr/(?-xism:\G\s*\{\s*)/
         },
         {
-          '+qty' => '?',
+          '+min' => 0,
           '.ref' => 'pair',
           '.sep' => {
             '.rgx' => qr/(?-xism:\G\s*,\s*)/
@@ -71,7 +71,7 @@ sub tree {
       '.rgx' => qr/(?-xism:\Gnull)/
     },
     'number' => {
-      '.rgx' => qr/(?-xism:\G([0-9]+(?:\.[0-9]*)?|\.[0-9]+))/
+      '.rgx' => qr/(?-xism:\G(\-?[0-9]+(?:\.[0-9]*)?|\.[0-9]+))/
     },
     'pair' => {
       '.all' => [
@@ -108,7 +108,7 @@ sub tree {
           '.rgx' => qr/(?-xism:\G\s*\[\s*)/
         },
         {
-          '+qty' => '?',
+          '+min' => 0,
           '.ref' => 'node',
           '.sep' => {
             '.rgx' => qr/(?-xism:\G\s*,\s*)/

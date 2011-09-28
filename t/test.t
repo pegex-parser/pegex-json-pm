@@ -17,7 +17,7 @@ sub yaml {
 __DATA__
 %TestML 1.0
 
-Plan = 10;
+Plan = 11;
 
 *json.parse.yaml == *yaml;
 
@@ -100,3 +100,12 @@ xyz:
 - ''
 - 0
 - ~
+
+=== Numbers
+--- json
+[0, -1, .1, 1.]
+--- yaml
+- 0
+- -1
+- 0.1
+- 1
