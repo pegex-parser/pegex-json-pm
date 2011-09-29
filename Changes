@@ -1,4 +1,9 @@
 ---
+version: 0.11
+date:    Fri Sep 30 01:54:50 CEST 2011
+changes:
+- Support negative numbers in grammar.
+---
 version: 0.10
 date:    Thu Sep 22 00:09:21 CEST 2011
 changes:

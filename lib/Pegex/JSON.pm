@@ -10,14 +10,14 @@
 
 use 5.010;
 
-use Pegex 0.16 ();
+use Pegex 0.18 ();
 use boolean 0.28 ();
 
 package Pegex::JSON;
 use Pegex::Mo;
 extends 'Pegex::Module';
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 use constant receiver => 'Pegex::JSON::Data';
 
