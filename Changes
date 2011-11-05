@@ -1,4 +1,9 @@
 ---
+version: 0.12
+date:    Sat Nov  5 01:07:33 PDT 2011
+changes:
+- use Pegex::Mo instead of Mo.
+---
 version: 0.11
 date:    Fri Sep 30 01:54:50 CEST 2011
 changes:

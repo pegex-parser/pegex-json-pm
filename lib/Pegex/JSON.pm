@@ -17,7 +17,7 @@ package Pegex::JSON;
 use Pegex::Mo;
 extends 'Pegex::Module';
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 use constant receiver => 'Pegex::JSON::Data';
 

@@ -6,7 +6,7 @@
 # copyright: 2011
 
 package Pegex::JSON::Grammar;
-use Mo;
+use Pegex::Mo;
 extends 'Pegex::Grammar';
 
 use constant text => '../json-pgx/json.pgx';
