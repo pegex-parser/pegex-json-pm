@@ -13,7 +13,9 @@ use constant text => '../json-pgx/json.pgx';
 
 sub tree {
   {
+    '+grammar' => 'json',
     '+top' => 'json',
+    '+version' => '0.0.1',
     'boolean' => {
       '.any' => [
         {
