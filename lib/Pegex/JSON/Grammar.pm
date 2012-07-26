@@ -3,7 +3,7 @@
 # abstract:  Pegex Grammar for JSON
 # author:    Ingy döt Net <ingy@cpan.org>
 # license:   perl
-# copyright: 2011
+# copyright: 2011, 2012
 
 package Pegex::JSON::Grammar;
 use Pegex::Mo;
@@ -11,10 +11,10 @@ extends 'Pegex::Grammar';
 
 use constant text => '../json-pgx/json.pgx';
 
-sub tree {
+sub make_tree {
   {
     '+grammar' => 'json',
-    '+top' => 'json',
+    '+toprule' => 'json',
     '+version' => '0.0.1',
     'boolean' => {
       '.any' => [
