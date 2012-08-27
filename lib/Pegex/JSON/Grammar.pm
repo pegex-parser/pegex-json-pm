@@ -9,7 +9,7 @@ package Pegex::JSON::Grammar;
 use Pegex::Mo;
 extends 'Pegex::Grammar';
 
-use constant text => '../json-pgx/json.pgx';
+use constant file => '../json-pgx/json.pgx';
 
 sub make_tree {
   {

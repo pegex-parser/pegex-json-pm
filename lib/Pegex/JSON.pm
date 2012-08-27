@@ -17,8 +17,12 @@ package Pegex::JSON;
 use Pegex::Mo;
 extends 'Pegex::Module';
 
+require Pegex::JSON::Grammar;
+require Pegex::JSON::Data;
+
 our $VERSION = '0.12';
 
+use constant grammar => 'Pegex::JSON::Grammar';
 use constant receiver => 'Pegex::JSON::Data';
 
 1;
