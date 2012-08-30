@@ -3,7 +3,7 @@
 # abstract:  Pegex Data Structure Builder for JSON
 # author:    Ingy döt Net <ingy@cpan.org>
 # license:   perl
-# copyright: 2011
+# copyright: 2011, 2012
 
 package Pegex::JSON::Data;
 use Pegex::Mo;

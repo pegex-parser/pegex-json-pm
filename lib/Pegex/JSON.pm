@@ -3,7 +3,7 @@
 # abstract:  Pegex Parser for JSON
 # author:    Ingy döt Net <ingy@cpan.org>
 # license:   perl
-# copyright: 2011
+# copyright: 2011, 2012
 # see:
 # - Pegex
 # - JSON
@@ -20,7 +20,7 @@ extends 'Pegex::Module';
 require Pegex::JSON::Grammar;
 require Pegex::JSON::Data;
 
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 use constant grammar => 'Pegex::JSON::Grammar';
 use constant receiver => 'Pegex::JSON::Data';
