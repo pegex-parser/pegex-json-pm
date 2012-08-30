@@ -10,7 +10,7 @@
 
 use 5.010;
 
-use Pegex 0.18 ();
+use Pegex 0.20 ();
 use boolean 0.28 ();
 
 package Pegex::JSON;
@@ -20,7 +20,7 @@ extends 'Pegex::Module';
 require Pegex::JSON::Grammar;
 require Pegex::JSON::Data;
 
-our $VERSION = '0.13';
+our $VERSION = '0.14';
 
 use constant grammar => 'Pegex::JSON::Grammar';
 use constant receiver => 'Pegex::JSON::Data';
