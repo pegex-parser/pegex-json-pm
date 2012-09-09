@@ -122,7 +122,7 @@ sub make_tree {
       ]
     },
     'string' => {
-      '.rgx' => qr/(?-xism:\G"((?:\\\\|\\"|[^"\n])*)")/
+      '.rgx' => qr/(?-xism:\G"((?:\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})|[^"\x00-\x1f])*)")/
     },
     'true' => {
       '.rgx' => qr/(?-xism:\Gtrue)/
