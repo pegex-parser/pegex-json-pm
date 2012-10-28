@@ -6,7 +6,7 @@
 # copyright: 2011, 2012
 
 package Pegex::JSON::Grammar;
-use Pegex::Mo;
+use Pegex::Base;
 extends 'Pegex::Grammar';
 
 use constant file => '../json-pgx/json.pgx';
@@ -27,7 +27,7 @@ sub make_tree {
       ]
     },
     'false' => {
-      '.rgx' => qr/(?-xism:\Gfalse)/
+      '.rgx' => qr/\Gfalse/
     },
     'json' => {
       '.any' => [
@@ -42,17 +42,17 @@ sub make_tree {
     'map' => {
       '.all' => [
         {
-          '.rgx' => qr/(?-xism:\G\s*\{\s*)/
+          '.rgx' => qr/\G\s*\{\s*/
         },
         {
           '+min' => 0,
           '.ref' => 'pair',
           '.sep' => {
-            '.rgx' => qr/(?-xism:\G\s*,\s*)/
+            '.rgx' => qr/\G\s*,\s*/
           }
         },
         {
-          '.rgx' => qr/(?-xism:\G\s*\}\s*)/
+          '.rgx' => qr/\G\s*\}\s*/
         }
       ]
     },
@@ -70,10 +70,10 @@ sub make_tree {
       ]
     },
     'null' => {
-      '.rgx' => qr/(?-xism:\Gnull)/
+      '.rgx' => qr/\Gnull/
     },
     'number' => {
-      '.rgx' => qr/(?-xism:\G(\-?(?:0|[1-9][0-9]*)(?:\.[0-9]*)?(?:[eE][\-\+]?[0-9]+)?))/
+      '.rgx' => qr/\G(\-?(?:0|[1-9][0-9]*)(?:\.[0-9]*)?(?:[eE][\-\+]?[0-9]+)?)/
     },
     'pair' => {
       '.all' => [
@@ -81,7 +81,7 @@ sub make_tree {
           '.ref' => 'string'
         },
         {
-          '.rgx' => qr/(?-xism:\G\s*:\s*)/
+          '.rgx' => qr/\G\s*:\s*/
         },
         {
           '.ref' => 'node'
@@ -107,25 +107,25 @@ sub make_tree {
     'seq' => {
       '.all' => [
         {
-          '.rgx' => qr/(?-xism:\G\s*\[\s*)/
+          '.rgx' => qr/\G\s*\[\s*/
         },
         {
           '+min' => 0,
           '.ref' => 'node',
           '.sep' => {
-            '.rgx' => qr/(?-xism:\G\s*,\s*)/
+            '.rgx' => qr/\G\s*,\s*/
           }
         },
         {
-          '.rgx' => qr/(?-xism:\G\s*\]\s*)/
+          '.rgx' => qr/\G\s*\]\s*/
         }
       ]
     },
     'string' => {
-      '.rgx' => qr/(?-xism:\G"((?:\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})|[^"\x00-\x1f])*)")/
+      '.rgx' => qr/\G"((?:\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})|[^"\x00-\x1f])*)"/
     },
     'true' => {
-      '.rgx' => qr/(?-xism:\Gtrue)/
+      '.rgx' => qr/\Gtrue/
     }
   }
 }

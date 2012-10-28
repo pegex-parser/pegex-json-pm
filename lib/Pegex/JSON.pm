@@ -10,20 +10,20 @@
 
 use 5.010;
 
-use Pegex 0.20 ();
+use Pegex 0.21 ();
 use boolean 0.28 ();
 
 package Pegex::JSON;
-use Pegex::Mo;
+use Pegex::Base;
 extends 'Pegex::Module';
 
 require Pegex::JSON::Grammar;
 require Pegex::JSON::Data;
 
-our $VERSION = '0.15';
+our $VERSION = '0.16';
 
-use constant grammar => 'Pegex::JSON::Grammar';
-use constant receiver => 'Pegex::JSON::Data';
+has grammar_class => 'Pegex::JSON::Grammar';
+has receiver_class => 'Pegex::JSON::Data';
 
 1;
 

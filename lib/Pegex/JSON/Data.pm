@@ -6,7 +6,7 @@
 # copyright: 2011, 2012
 
 package Pegex::JSON::Data;
-use Pegex::Mo;
+use Pegex::Base;
 extends 'Pegex::Receiver';
 
 use boolean;
