@@ -7,7 +7,7 @@
 
 package Pegex::JSON::Data;
 use Pegex::Base;
-extends 'Pegex::Receiver';
+extends 'Pegex::Tree';
 
 use boolean;
 
