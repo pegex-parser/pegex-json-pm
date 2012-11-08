@@ -1,8 +1,8 @@
 ---
 version: 0.16
-date:    
+date:    Thu Nov  8 10:50:06 PST 2012
 changes:
-- New Pegex::Module API.
+- New Pegex::Module API in Pegex-0.21.
 ---
 version: 0.15
 date:    Sun Sep  9 16:13:29 PDT 2012
