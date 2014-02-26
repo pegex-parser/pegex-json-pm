@@ -1,10 +1,3 @@
-##
-# name:      Pegex::JSON::Data
-# abstract:  Pegex Data Structure Builder for JSON
-# author:    Ingy döt Net <ingy@cpan.org>
-# license:   perl
-# copyright: 2011, 2012
-
 package Pegex::JSON::Data;
 use Pegex::Base;
 extends 'Pegex::Tree';
@@ -38,3 +31,5 @@ sub got_number { $_[1] + 0 }
 sub got_true { &boolean::true }
 sub got_false { &boolean::false }
 sub got_null { undef }
+
+1;
