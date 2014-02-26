@@ -1,25 +1,39 @@
-use TestML -run,
-    -require_or_skip => 'YAML::XS';
+use lib 't', 'inc';
+use TestML;
+use TestML::Bridge;
 
-use Pegex::JSON;
+TestML->new(
+    testml => join('', <DATA>),
+    bridge => 'TestML::Bridge',
+)->run;
 
-# $Pegex::Parser::Debug = 1;
-sub parse {
-    return Pegex::JSON->new->parse((shift)->value);
-}
+{
+    package TestML::Bridge;
+    use TestML::Util;
+    use YAML::XS;
 
-sub yaml {
-    my $yaml = YAML::XS::Dump((shift)->value);
-    $yaml =~ s/^---\s+//;
-    return $yaml;
+    use Pegex::JSON;
+
+    # $Pegex::Parser::Debug = 1;
+    sub load {
+        my ($self, $str) = @_;
+        return str 'Pegex::JSON'->new->load($str->value);
+    }
+
+    sub yaml {
+        my ($self, $str) = @_;
+        my $yaml = YAML::XS::Dump($str->value);
+        $yaml =~ s/^---\s+//;
+        return str $yaml;
+    }
 }
 
 __DATA__
-%TestML 1.0
+%TestML 1.0.0
 
 Plan = 11;
 
-*json.parse.yaml == *yaml;
+*json.load.yaml == *yaml;
 
 === Simple Mapping
 --- json: {"a":1,"b":2}
