@@ -1,4 +1,10 @@
 ---
+version: 0.17
+date:    Wed Feb 26 08:37:49 PST 2014
+changes:
+- Make API compatible with JSONY.pm
+- Switch to dzil release
+---
 version: 0.16
 date:    Thu Nov  8 10:50:06 PST 2012
 changes:
