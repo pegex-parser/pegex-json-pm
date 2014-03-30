@@ -24,6 +24,7 @@ TestML->new(
         my ($self, $str) = @_;
         my $yaml = YAML::XS::Dump($str->value);
         $yaml =~ s/^---\s+//;
+        $yaml =~ s{!!perl/scalar:boolean }{};
         return str $yaml;
     }
 }

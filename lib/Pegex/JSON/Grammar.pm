@@ -7,6 +7,7 @@ use constant file => '../json-pgx/json.pgx';
 sub make_tree {
   {
     '+grammar' => 'json',
+    '+include' => 'pegex-atoms',
     '+toprule' => 'json',
     '+version' => '0.0.1',
     'boolean' => {
