@@ -39,11 +39,24 @@ sub make_tree {
           '.rgx' => qr/\G\s*\{\s*/
         },
         {
-          '+min' => 0,
-          '.ref' => 'pair',
-          '.sep' => {
-            '.rgx' => qr/\G\s*,\s*/
-          }
+          '+max' => 1,
+          '.all' => [
+            {
+              '.ref' => 'pair'
+            },
+            {
+              '+min' => 0,
+              '-flat' => 1,
+              '.all' => [
+                {
+                  '.rgx' => qr/\G\s*,\s*/
+                },
+                {
+                  '.ref' => 'pair'
+                }
+              ]
+            }
+          ]
         },
         {
           '.rgx' => qr/\G\s*\}\s*/
@@ -104,11 +117,24 @@ sub make_tree {
           '.rgx' => qr/\G\s*\[\s*/
         },
         {
-          '+min' => 0,
-          '.ref' => 'node',
-          '.sep' => {
-            '.rgx' => qr/\G\s*,\s*/
-          }
+          '+max' => 1,
+          '.all' => [
+            {
+              '.ref' => 'node'
+            },
+            {
+              '+min' => 0,
+              '-flat' => 1,
+              '.all' => [
+                {
+                  '.rgx' => qr/\G\s*,\s*/
+                },
+                {
+                  '.ref' => 'node'
+                }
+              ]
+            }
+          ]
         },
         {
           '.rgx' => qr/\G\s*\]\s*/
