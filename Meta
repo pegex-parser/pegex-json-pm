@@ -1,0 +1,38 @@
+=meta: 0.0.1
+
+name: Pegex-JSON
+version: 0.18
+abstract: Pegex Loader for JSON
+homepage: http://pegex.org
+
+license: perl
+copyright: 2014. Ingy döt Net.
+author:
+  name: Ingy döt Net
+  email: ingy@cpan.org
+  github: ingydotnet
+  twitter: ingydotnet
+  freenode: ingy
+  homepage: http://ingy.net
+
+requires:
+  perl: 5.8.1
+  Pegex: 0.30
+  boolean: 0
+
+test:
+  requires:
+    YAML::XS: 0
+
+devel:
+  git: git@github.org/ingydotnet/pegex-json-pm
+  irc: irc.freenode.net/pegex
+  bug: https://github.com/ingydotnet/pegex-json-pm/issues/
+
+=cpan:
+  include_testml: 1
+
+=travis:
+  type: perl
+  testml: yes
+  irc: irc.freenode.net#pegex
