@@ -1,4 +1,9 @@
 ---
+version: 0.19
+date:    Mon Jun 16 15:50:38 PDT 2014
+changes:
+- Switch to manual versioning and fix travis
+---
 version: 0.18
 date:    Sat Jun 14 13:55:40 PDT 2014
 changes:

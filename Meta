@@ -1,7 +1,7 @@
 =meta: 0.0.1
 
 name: Pegex-JSON
-version: 0.18
+version: 0.19
 abstract: Pegex Loader for JSON
 homepage: http://pegex.org
 
@@ -34,5 +34,7 @@ devel:
 
 =travis:
   type: perl
-  testml: yes
   irc: irc.freenode.net#pegex
+  test:
+    requires:
+      TestML: 0

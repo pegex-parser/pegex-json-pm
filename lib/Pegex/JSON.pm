@@ -1,4 +1,5 @@
 package Pegex::JSON;
+our $VERSION = '0.19';
 
 use Pegex::Base;
 
