@@ -8,7 +8,7 @@ See http://github.com/ingydotnet/kwim-pm#readme
 
 =head1 NAME
 
-Pegex::JSONY - Pegex Loader for JSON
+Pegex::JSON - Pegex Loader for JSON
 
 =for html
 <a href="https://travis-ci.org/ingydotnet/pegex-json-pm"><img src="https://travis-ci.org/ingydotnet/pegex-json-pm.png" alt="pegex-json-pm"></a>

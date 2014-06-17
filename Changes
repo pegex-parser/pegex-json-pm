@@ -1,4 +1,9 @@
 ---
+version: 0.20
+date:    Mon Jun 16 21:26:23 PDT 2014
+changes:
+- Doc Fix. haarg++
+---
 version: 0.19
 date:    Mon Jun 16 15:50:38 PDT 2014
 changes:
