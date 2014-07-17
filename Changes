@@ -1,4 +1,10 @@
 ---
+version: 0.21
+date:    Wed Jul 16 23:32:16 PDT 2014
+changes:
+- Move doc to Swim
+- Fix Meta and add Contributing file
+---
 version: 0.20
 date:    Mon Jun 16 21:26:23 PDT 2014
 changes:

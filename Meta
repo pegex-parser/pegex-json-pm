@@ -1,7 +1,7 @@
 =meta: 0.0.1
 
 name: Pegex-JSON
-version: 0.20
+version: 0.21
 abstract: Pegex Loader for JSON
 homepage: http://pegex.org
 
@@ -25,9 +25,9 @@ test:
     YAML::XS: 0
 
 devel:
-  git: git@github.org/ingydotnet/pegex-json-pm
-  irc: irc.freenode.net/pegex
-  bug: https://github.com/ingydotnet/pegex-json-pm/issues/
+  git: https://github.com/ingydotnet/pegex-json-pm
+  bug: https://github.com/ingydotnet/pegex-json-pm/issues
+  irc: irc.freenode.net#pegex
 
 =cpan:
   include_testml: 1
