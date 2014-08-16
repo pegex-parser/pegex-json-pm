@@ -1,7 +1,7 @@
 =meta: 0.0.2
 
 name: Pegex-JSON
-version: 0.24
+version: 0.25
 abstract: Pegex Loader for JSON
 homepage: http://pegex.org
 language: perl
@@ -32,8 +32,3 @@ test:
 
 =zild:
   include_testml: 1
-
-=travis:
-  test:
-    requires:
-      TestML: 0

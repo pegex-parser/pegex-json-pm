@@ -21,8 +21,8 @@ install:
   Devel::Cover::Report::Coveralls
   boolean
   Pegex
-  TestML
   YAML::XS
+  TestML
 
 script:
 - PERL5OPT=-MDevel::Cover=-coverage,statement,branch,condition,path,subroutine
