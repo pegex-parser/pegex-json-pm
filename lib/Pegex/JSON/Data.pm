@@ -4,8 +4,8 @@ extends 'Pegex::Tree';
 
 use boolean;
 
-sub got_map { +{map @$_, map @$_, @{(pop)}} }
-sub got_seq { [map @$_, @{(pop)}] }
+sub got_object { +{map @$_, map @$_, @{(pop)}} }
+sub got_array { [map @$_, @{(pop)}] }
 
 my %escapes = (
     '"' => '"',

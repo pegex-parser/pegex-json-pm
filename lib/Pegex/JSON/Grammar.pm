@@ -4,19 +4,39 @@ extends 'Pegex::Grammar';
 
 use constant file => '../json-pgx/json.pgx';
 
-sub make_tree {
+sub make_tree {   # Generated/Inlined by Pegex::Grammar (0.45)
   {
     '+grammar' => 'json',
     '+include' => 'pegex-atoms',
     '+toprule' => 'json',
     '+version' => '0.0.1',
-    'boolean' => {
-      '.any' => [
+    'array' => {
+      '.all' => [
         {
-          '.ref' => 'true'
+          '.rgx' => qr/\G\s*\[\s*/
         },
         {
-          '.ref' => 'false'
+          '+max' => 1,
+          '.all' => [
+            {
+              '.ref' => 'value'
+            },
+            {
+              '+min' => 0,
+              '-flat' => 1,
+              '.all' => [
+                {
+                  '.rgx' => qr/\G\s*,\s*/
+                },
+                {
+                  '.ref' => 'value'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          '.rgx' => qr/\G\s*\]\s*/
         }
       ]
     },
@@ -24,16 +44,15 @@ sub make_tree {
       '.rgx' => qr/\Gfalse/
     },
     'json' => {
-      '.any' => [
-        {
-          '.ref' => 'map'
-        },
-        {
-          '.ref' => 'seq'
-        }
-      ]
+      '.ref' => 'value'
     },
-    'map' => {
+    'null' => {
+      '.rgx' => qr/\Gnull/
+    },
+    'number' => {
+      '.rgx' => qr/\G(\-?(?:0|[1-9][0-9]*)(?:\.[0-9]*)?(?:[eE][\-\+]?[0-9]+)?)/
+    },
+    'object' => {
       '.all' => [
         {
           '.rgx' => qr/\G\s*\{\s*/
@@ -63,25 +82,6 @@ sub make_tree {
         }
       ]
     },
-    'node' => {
-      '.any' => [
-        {
-          '.ref' => 'map'
-        },
-        {
-          '.ref' => 'seq'
-        },
-        {
-          '.ref' => 'scalar'
-        }
-      ]
-    },
-    'null' => {
-      '.rgx' => qr/\Gnull/
-    },
-    'number' => {
-      '.rgx' => qr/\G(\-?(?:0|[1-9][0-9]*)(?:\.[0-9]*)?(?:[eE][\-\+]?[0-9]+)?)/
-    },
     'pair' => {
       '.all' => [
         {
@@ -91,53 +91,7 @@ sub make_tree {
           '.rgx' => qr/\G\s*:\s*/
         },
         {
-          '.ref' => 'node'
-        }
-      ]
-    },
-    'scalar' => {
-      '.any' => [
-        {
-          '.ref' => 'string'
-        },
-        {
-          '.ref' => 'number'
-        },
-        {
-          '.ref' => 'boolean'
-        },
-        {
-          '.ref' => 'null'
-        }
-      ]
-    },
-    'seq' => {
-      '.all' => [
-        {
-          '.rgx' => qr/\G\s*\[\s*/
-        },
-        {
-          '+max' => 1,
-          '.all' => [
-            {
-              '.ref' => 'node'
-            },
-            {
-              '+min' => 0,
-              '-flat' => 1,
-              '.all' => [
-                {
-                  '.rgx' => qr/\G\s*,\s*/
-                },
-                {
-                  '.ref' => 'node'
-                }
-              ]
-            }
-          ]
-        },
-        {
-          '.rgx' => qr/\G\s*\]\s*/
+          '.ref' => 'value'
         }
       ]
     },
@@ -146,6 +100,31 @@ sub make_tree {
     },
     'true' => {
       '.rgx' => qr/\Gtrue/
+    },
+    'value' => {
+      '.any' => [
+        {
+          '.ref' => 'string'
+        },
+        {
+          '.ref' => 'number'
+        },
+        {
+          '.ref' => 'object'
+        },
+        {
+          '.ref' => 'array'
+        },
+        {
+          '.ref' => 'true'
+        },
+        {
+          '.ref' => 'false'
+        },
+        {
+          '.ref' => 'null'
+        }
+      ]
     }
   }
 }
