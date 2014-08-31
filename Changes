@@ -1,4 +1,10 @@
 ---
+version: 0.26
+date:    Sat Aug 30 21:29:04 PDT 2014
+changes:
+- Fix issue/2 and support RFC 7159
+- Top level values can be any JSON value
+---
 version: 0.25
 date:    Sat Aug 16 14:11:47 PDT 2014
 changes:
