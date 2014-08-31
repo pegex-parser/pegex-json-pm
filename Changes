@@ -1,4 +1,10 @@
 ---
+version: 0.27
+date:    Sat Aug 30 23:32:26 MDT 2014
+changes:
+- Add tests for top level scalars
+- Found a serious bug with it and fix
+---
 version: 0.26
 date:    Sat Aug 30 21:29:04 PDT 2014
 changes:

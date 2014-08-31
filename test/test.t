@@ -32,8 +32,6 @@ TestML->new(
 __DATA__
 %TestML 1.0.0
 
-Plan = 11;
-
 *json.load.yaml == *yaml;
 
 === Simple Mapping
@@ -142,3 +140,29 @@ xyz:
 - -5.55
 - 66.66
 - -66.66
+
+=== Top Level String
+--- json
+"JSON Value"
+--- yaml
+JSON Value
+
+=== Top Level Number
+--- json
+42
+--- yaml
+42
+
+# boolean::true morphs to 1 internally
+=== Top Level Boolean
+--- json
+true
+--- yaml
+1
+
+=== Top Level null
+--- json
+null
+--- yaml
+~
+

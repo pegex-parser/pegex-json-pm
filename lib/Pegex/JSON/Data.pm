@@ -4,6 +4,7 @@ extends 'Pegex::Tree';
 
 use boolean;
 
+sub got_json { $_[1][0] }
 sub got_object { +{map @$_, map @$_, @{(pop)}} }
 sub got_array { [map @$_, @{(pop)}] }
 

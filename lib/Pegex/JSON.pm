@@ -1,5 +1,6 @@
 package Pegex::JSON;
-our $VERSION = '0.26';
+BEGIN { $ENV{PERL_PEGEX_AUTO_COMPILE} = 'Pegex::JSON::Grammar' }
+our $VERSION = '0.27';
 
 use Pegex::Base;
 
@@ -12,6 +13,7 @@ sub load {
     Pegex::Parser->new(
         grammar => Pegex::JSON::Grammar->new,
         receiver => Pegex::JSON::Data->new,
+        # debug => 1,
     )->parse($json);
 }
 
