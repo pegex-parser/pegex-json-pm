@@ -1,12 +1,12 @@
 =meta: 0.0.2
 
 name: Pegex-JSON
-version: 0.27
+version: 0.28
 abstract: Pegex Loader for JSON
 homepage: http://pegex.org
 language: perl
 license: perl
-copyright: 2011-2014
+copyright: 2011-2018
 
 author:
   name: Ingy döt Net
