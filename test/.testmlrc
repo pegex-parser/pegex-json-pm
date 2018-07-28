@@ -1,0 +1,2 @@
+TESTML_RUN=perl5-tap
+TESTML_LIB=lib:test
