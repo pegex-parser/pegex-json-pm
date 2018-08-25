@@ -1,6 +1,6 @@
 package Pegex::JSON;
 BEGIN { $ENV{PERL_PEGEX_AUTO_COMPILE} = 'Pegex::JSON::Grammar' }
-our $VERSION = '0.28_01';
+our $VERSION = '0.29';
 
 use Pegex::Base;
 
