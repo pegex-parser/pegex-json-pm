@@ -1,7 +1,7 @@
 =meta: 0.0.2
 
 name: Pegex-JSON
-version: 0.29
+version: 0.30
 abstract: Pegex Loader for JSON
 homepage: http://pegex.org
 language: perl
@@ -22,8 +22,8 @@ devel:
   irc: irc.freenode.net#pegex
 
 requires:
-  perl: 5.8.1
-  Pegex: 0.30
+  perl: 5.8.3
+  Pegex: 0.65
   boolean: 0
 
 test:

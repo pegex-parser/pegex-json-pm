@@ -1,4 +1,9 @@
 ---
+version: 0.30
+date:    Wed Aug 29 21:19:34 PDT 2018
+changes:
+- Support Perl 5.8.9
+---
 version: 0.29
 date:    Fri Aug 24 19:16:42 PDT 2018
 changes:
