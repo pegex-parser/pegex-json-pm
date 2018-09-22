@@ -70,6 +70,7 @@ sub make_tree {   # Generated/Inlined by Pegex::Grammar (0.67)
     'object' => {
       '.all' => [
         {
+          '-skip' => 1,
           '.rgx' => qr/\G\s*\{\s*/
         },
         {
@@ -93,6 +94,7 @@ sub make_tree {   # Generated/Inlined by Pegex::Grammar (0.67)
           ]
         },
         {
+          '-skip' => 1,
           '.rgx' => qr/\G\s*\}\s*/
         }
       ]
