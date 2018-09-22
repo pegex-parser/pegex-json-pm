@@ -4,7 +4,7 @@ extends 'Pegex::Grammar';
 
 use constant file => '../json-pgx/json.pgx';
 
-sub make_tree {   # Generated/Inlined by Pegex::Grammar (0.64)
+sub make_tree {   # Generated/Inlined by Pegex::Grammar (0.67)
   {
     '+grammar' => 'json',
     '+include' => 'pegex-atoms',
@@ -16,6 +16,7 @@ sub make_tree {   # Generated/Inlined by Pegex::Grammar (0.64)
     'array' => {
       '.all' => [
         {
+          '-skip' => 1,
           '.rgx' => qr/\G\s*\[\s*/
         },
         {
@@ -39,6 +40,7 @@ sub make_tree {   # Generated/Inlined by Pegex::Grammar (0.64)
           ]
         },
         {
+          '-skip' => 1,
           '.rgx' => qr/\G\s*\]\s*/
         }
       ]
