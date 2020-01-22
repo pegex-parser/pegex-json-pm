@@ -23,12 +23,12 @@ devel:
 
 requires:
   perl: 5.8.3
-  Pegex: 0.65
-  boolean: 0
+  Pegex: 0.73
+  boolean: 0.46
 
 test:
   requires:
-    YAML::XS: 0
+    YAML::PP: 0.018
 
 =zild:
   include_testml: 1
